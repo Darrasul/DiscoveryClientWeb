@@ -19,7 +19,7 @@
                 <td><span th:text="${product.title}"></span></td>
                 <td><span th:text="${product.price}"></span></td>
                 <td>
-                    <form action="#" method="post">
+                    <form action="#" th:action="@{/delete/} + ${product.id}" method="post">
                         <button type="submit">Delete</button>
                     </form>
                 </td>
@@ -28,7 +28,9 @@
         </table>
     </div>
     <div align="center">
-        <form action="#">
+        <form action="#" th:action="@{/}" th:object="${product}" method="post">
+            <input type="text" id="title" name="title" placeholder="set title" th:field="*{title}">
+            <input type="text" id="price" name="price" placeholder="set price" th:field="*{price}">
             <button type="submit">Add</button>
         </form>
     </div>
