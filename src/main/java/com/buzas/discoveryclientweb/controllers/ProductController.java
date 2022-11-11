@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
+@RequestMapping("web")
 public class ProductController {
     private final ClientDb clientDb;
 
